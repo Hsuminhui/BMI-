@@ -46,7 +46,7 @@ namespace BMI計算機
             string strResult = "";
             Color colorResult = Color.Black;
             int resultIndex = 0;
-            if (bmi < 10.5)
+            if (bmi < 18.5)
             {
                 resultIndex = 0;
             }
