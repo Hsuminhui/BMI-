@@ -1,6 +1,8 @@
 # BMI計算機
 視窗程式設計(二)上課範例
 
-可以輸入身高(cm)、體重(kg)，按下計算機按鈕後，會顯示BMI值、BMI分類、建議。
+能夠輸入身高(cm)、體重(kg)，若輸入格式為非數字，將會有錯誤視窗彈出。
+按下"計算"按鈕後，會顯示BMI值、BMI分類、理想體重。(旁側附上BMI對照表)
 
-<img width="452" height="343" alt="image" src="https://github.com/user-attachments/assets/0509c764-1922-4dcc-9bfc-85e6ac4999ec" />
+<img width="782" height="434" alt="image" src="https://github.com/user-attachments/assets/c266af2b-6eb2-471d-b5e5-fc5f809b21b2" />
+
