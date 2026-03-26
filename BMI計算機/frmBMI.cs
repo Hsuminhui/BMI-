@@ -15,19 +15,23 @@ namespace BMI計算機
         public frmBMI()
         {
             InitializeComponent();
+            picbox1.Image = Properties.Resources.BMI對照表;
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            double height = double.Parse(txtHeight.Text);
-            double weight = double.Parse(txtWeight.Text);
-            //計算BMI
-            double bmi = weight / (height * height);
+
+            double height, weight;
+
             //顯示結果
             //lblResult.Text = $"{bmi:F2}"; //格式化字串 F:固定小數點格式 2:表示顯示兩位小數
 
             bool isHeightValid = double.TryParse(txtHeight.Text, out height);
             bool isWeightValid = double.TryParse(txtWeight.Text, out weight);
+
+            //計算BMI
+            double bmi = weight / (height * height);
+
             if (isHeightValid && isWeightValid)
             {
                 height /= 100;
@@ -39,14 +43,14 @@ namespace BMI計算機
                 MessageBox.Show("請輸入有效的數字。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            string[] strResultList = { "體重過輕", "健康體位", "體位過重", "輕度肥胖", "重度肥胖" };
+            string[] strResultList = { "體重過輕", "健康體位", "體位過重", "輕度肥胖", "中度肥胖", "重度肥胖" };
 
-            Color[] colorList = { Color.LightBlue, Color.Green, Color.Orange, Color.DarkOrange, Color.Purple };
+            Color[] colorList = { Color.LightBlue, Color.Green, Color.Orange, Color.DarkOrange, Color.Red, Color.Purple };
 
             string strResult = "";
             Color colorResult = Color.Black;
             int resultIndex = 0;
-            if (bmi < 10.5)
+            if (bmi < 18.5)
             {
                 resultIndex = 0;
             }
@@ -75,6 +79,10 @@ namespace BMI計算機
 
             lblResult.Text = $"{bmi:F2} {strResult}";
             lblResult.BackColor = colorResult;
+
+            //計算理想體重
+            double idealweight = 22 * height * height;
+            lblResult0.Text = $"{idealweight}";
         }
     }
 }
