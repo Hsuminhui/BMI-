@@ -102,10 +102,10 @@ namespace BMI計算機
             lblResult.Text = "";
             lblResult0.Text = "";
 
-            // 還原背景色（避免殘留紅色/綠色）
+            // 還原背景色
             lblResult.BackColor = SystemColors.Control;
 
-            // 游標回到身高欄位（很重要，UX會很好）
+            // 游標回到身高欄位
             txtHeight.Focus();
         }
     }
