@@ -16,6 +16,7 @@ namespace BMI計算機
         {
             InitializeComponent();
             picbox1.Image = Properties.Resources.BMI對照表;
+            this.AcceptButton = btnRun;
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -40,7 +41,13 @@ namespace BMI計算機
             }
             else
             {
+                lblResult.Text = "";
+                lblResult0.Text = "";
+                lblResult.BackColor = SystemColors.Control;
                 MessageBox.Show("請輸入有效的數字。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //lblResult.Text = "";
+                //lblResult0.Text = "";
+                return;
             }
 
             string[] strResultList = { "體重過輕", "健康體位", "體位過重", "輕度肥胖", "中度肥胖", "重度肥胖" };
@@ -82,7 +89,24 @@ namespace BMI計算機
 
             //計算理想體重
             double idealweight = 22 * height * height;
-            lblResult0.Text = $"{idealweight}";
+            lblResult0.Text = $"{idealweight:F1}";
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            // 清空輸入欄位
+            txtHeight.Text = "";
+            txtWeight.Text = "";
+
+            // 清空結果
+            lblResult.Text = "";
+            lblResult0.Text = "";
+
+            // 還原背景色（避免殘留紅色/綠色）
+            lblResult.BackColor = SystemColors.Control;
+
+            // 游標回到身高欄位（很重要，UX會很好）
+            txtHeight.Focus();
         }
     }
 }
