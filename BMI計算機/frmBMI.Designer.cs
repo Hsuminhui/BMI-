@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpInput = new System.Windows.Forms.GroupBox();
+            this.deletebtn = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtHeight = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.picbox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.deletebtn = new System.Windows.Forms.Button();
             this.grpInput.SuspendLayout();
             this.grpOutput.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -51,7 +51,7 @@
             // 
             // grpInput
             // 
-            this.grpInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.grpInput.BackColor = System.Drawing.Color.WhiteSmoke;
             this.grpInput.Controls.Add(this.deletebtn);
             this.grpInput.Controls.Add(this.btnRun);
             this.grpInput.Controls.Add(this.txtWeight);
@@ -59,13 +59,27 @@
             this.grpInput.Controls.Add(this.lblWeight);
             this.grpInput.Controls.Add(this.lblHeight);
             this.grpInput.Location = new System.Drawing.Point(163, 219);
-            this.grpInput.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpInput.Margin = new System.Windows.Forms.Padding(5);
             this.grpInput.Name = "grpInput";
-            this.grpInput.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpInput.Padding = new System.Windows.Forms.Padding(5);
             this.grpInput.Size = new System.Drawing.Size(582, 310);
             this.grpInput.TabIndex = 0;
             this.grpInput.TabStop = false;
             this.grpInput.Text = "輸入";
+            // 
+            // deletebtn
+            // 
+            this.deletebtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.deletebtn.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.deletebtn.ForeColor = System.Drawing.Color.White;
+            this.deletebtn.Location = new System.Drawing.Point(117, 229);
+            this.deletebtn.Margin = new System.Windows.Forms.Padding(5);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(131, 60);
+            this.deletebtn.TabIndex = 4;
+            this.deletebtn.Text = "清除";
+            this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // btnRun
             // 
@@ -73,7 +87,7 @@
             this.btnRun.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRun.ForeColor = System.Drawing.Color.White;
             this.btnRun.Location = new System.Drawing.Point(319, 229);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(5);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(148, 60);
             this.btnRun.TabIndex = 3;
@@ -85,7 +99,7 @@
             // 
             this.txtWeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWeight.Location = new System.Drawing.Point(264, 138);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(5);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(201, 39);
             this.txtWeight.TabIndex = 1;
@@ -94,7 +108,7 @@
             // 
             this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHeight.Location = new System.Drawing.Point(264, 42);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(5);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(201, 39);
             this.txtHeight.TabIndex = 0;
@@ -121,15 +135,15 @@
             // 
             // grpOutput
             // 
-            this.grpOutput.BackColor = System.Drawing.Color.Gainsboro;
+            this.grpOutput.BackColor = System.Drawing.Color.WhiteSmoke;
             this.grpOutput.Controls.Add(this.lblResult0);
             this.grpOutput.Controls.Add(this.lblideal);
             this.grpOutput.Controls.Add(this.lblResult);
             this.grpOutput.Controls.Add(this.lblBMI);
             this.grpOutput.Location = new System.Drawing.Point(163, 556);
-            this.grpOutput.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpOutput.Margin = new System.Windows.Forms.Padding(5);
             this.grpOutput.Name = "grpOutput";
-            this.grpOutput.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpOutput.Padding = new System.Windows.Forms.Padding(5);
             this.grpOutput.Size = new System.Drawing.Size(582, 271);
             this.grpOutput.TabIndex = 1;
             this.grpOutput.TabStop = false;
@@ -179,13 +193,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Controls.Add(this.picbox1);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(811, 219);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(520, 608);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -194,7 +209,7 @@
             // picbox1
             // 
             this.picbox1.Location = new System.Drawing.Point(31, 42);
-            this.picbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picbox1.Margin = new System.Windows.Forms.Padding(4);
             this.picbox1.Name = "picbox1";
             this.picbox1.Size = new System.Drawing.Size(463, 541);
             this.picbox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,32 +227,18 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "BMI計算器";
             // 
-            // deletebtn
-            // 
-            this.deletebtn.BackColor = System.Drawing.Color.ForestGreen;
-            this.deletebtn.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.deletebtn.ForeColor = System.Drawing.Color.White;
-            this.deletebtn.Location = new System.Drawing.Point(117, 229);
-            this.deletebtn.Margin = new System.Windows.Forms.Padding(5);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(131, 60);
-            this.deletebtn.TabIndex = 4;
-            this.deletebtn.Text = "清除";
-            this.deletebtn.UseVisualStyleBackColor = false;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
-            // 
             // frmBMI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1415, 973);
+            this.BackColor = System.Drawing.Color.Tan;
+            this.ClientSize = new System.Drawing.Size(1460, 1004);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpOutput);
             this.Controls.Add(this.grpInput);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmBMI";
             this.Text = "BMI計算機";
             this.grpInput.ResumeLayout(false);
