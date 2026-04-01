@@ -9,7 +9,8 @@
 <img width="149" height="112" alt="image" src="https://github.com/user-attachments/assets/5cb424ea-2bbd-465c-87c2-71f94be5e673" />
 
 3. 按下"計算"按鈕後，會於"計算結果"的區塊中顯示理想體重、BMI值、BMI分類。(旁側附上BMI對照表)
-<img width="1093" height="739" alt="image" src="https://github.com/user-attachments/assets/6acd4b8e-05d3-4e71-8f93-7c16ccc25143" />
+<img width="1091" height="682" alt="image" src="https://github.com/user-attachments/assets/4c59d93b-2cff-42fd-871a-597cf9643b1c" />
+
 
 4.執行完畢後，能夠按"清除"清空所有輸入欄位，並重新輸入測試值
 
